@@ -15,8 +15,14 @@ Ein benutzerfreundliches Tool zur Auswertung und Dokumentation von Ladevorgänge
 
 ## Installation
 
-### API-Aktivierung in der go-e Wallbox
 
+
+#### Voraussetzungen
+
+- Python 3.8 oder höher
+- pip (Python Package Manager)
+
+#### API-Aktivierung in der go-e Wallbox
 ⚠️ **Wichtig**: Bevor Sie das Tool nutzen können, muss die lokale HTTP-API in Ihrer go-e Wallbox aktiviert werden:
 1. Öffnen Sie die go-e Charger App
 2. Navigieren Sie zu: Einstellungen → Verbindung → API Einstellungen
@@ -28,25 +34,12 @@ Bei der ersten Ausführung werden Sie nach den grundlegenden Einstellungen gefra
 
 Diese Einstellungen werden gespeichert und können später in den Programmeinstellungen angepasst werden.
 
-### Option 1: Ausführbare Datei (Empfohlen)
-
-1. Laden Sie die neueste Version der EXE-Datei aus dem [Release-Bereich](https://github.com/jhilgenberg/go-e-report/releases) herunter
-2. Führen Sie die heruntergeladene EXE-Datei aus
-3. Folgen Sie den Anweisungen zur Erstkonfiguration
-
-### Option 2: Installation über Python
-
-#### Voraussetzungen
-
-- Python 3.8 oder höher
-- pip (Python Package Manager)
-
 #### Installationsschritte
 
 1. Laden Sie das Repository herunter:
 ```bash
 git clone https://github.com/jhilgenberg/go-e-report.git
-cd goe-charger-tool
+cd go-e-report
 ```
 
 2. Installieren Sie die erforderlichen Abhängigkeiten:
