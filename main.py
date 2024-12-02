@@ -1,30 +1,48 @@
-import tkinter as tk
-from tkinter import ttk, messagebox
-from datetime import datetime, timedelta
+"""
+go-e Charger Auswertungstool für die Auswertung und Dokumentation von Ladevorgängen.
+Ermöglicht die Erstellung detaillierter Monatsberichte für die Abrechnung.
+"""
+
+# Standard Library Imports
+import os
+import json
+import time
+import calendar
+from datetime import datetime
+from io import StringIO
+
+# Third Party Imports
 import requests
 import pandas as pd
 from fpdf import FPDF
-import json
-from tkcalendar import DateEntry
-from io import StringIO
-import time
-import os
-import calendar
 import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
-import tempfile
+from tkcalendar import DateEntry
+import tkinter as tk
+from tkinter import ttk, messagebox
+
 
 class GoeChargerApp:
+    """
+    Hauptanwendungsklasse für das go-e Charger Auswertungstool.
+    Verwaltet die GUI und Geschäftslogik der Anwendung.
+    """
+
     def __init__(self, root):
+        """Initialisiert die Anwendung.
+
+        Args:
+            root: Das Hauptfenster der Anwendung
+        """
         self.root = root
         self.root.title("go-e Charger Auswertung")
         self.settings_file = "goe_charger_settings.json"
-        self.settings = {}  # Initialisiere settings als leeres Dictionary
-        
+        self.settings = {}
+
         # Hauptframe mit Padding
         main_frame = ttk.Frame(root, padding="20")
         main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
-        
+
         # Style konfigurieren
         style = ttk.Style()
         style.configure('Header.TLabel', font=('Arial', 11, 'bold'))
