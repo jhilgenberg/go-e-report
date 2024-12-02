@@ -5,7 +5,7 @@ Ein benutzerfreundliches Tool zur Auswertung und Dokumentation von Ladevorgänge
 
 ## Features
 
-- 📊 Automatische Datenabfrage über die go-e Charger API
+- 📊 Automatische Datenabfrage über die go-e Charger API (lokal oder cloud-basiert)
 - 📅 Flexible Zeitraumauswahl (Tages- und Monatsansicht)
 - 📈 Visualisierung der Ladedaten mit übersichtlichen Diagrammen
 - 💰 Automatische Kostenberechnung basierend auf kWh-Preis
@@ -15,22 +15,34 @@ Ein benutzerfreundliches Tool zur Auswertung und Dokumentation von Ladevorgänge
 
 ## Installation
 
-
-
 #### Voraussetzungen
 
 - Python 3.8 oder höher
 - pip (Python Package Manager)
 
 #### API-Aktivierung in der go-e Wallbox
-⚠️ **Wichtig**: Bevor Sie das Tool nutzen können, muss die lokale HTTP-API in Ihrer go-e Wallbox aktiviert werden:
+⚠️ **Wichtig**: Bevor Sie das Tool nutzen können, muss die API in Ihrer go-e Wallbox aktiviert werden:
+
 1. Öffnen Sie die go-e Charger App
 2. Navigieren Sie zu: Einstellungen → Verbindung → API Einstellungen
-3. Aktivieren Sie die "Lokale HTTP API"
+3. Hier können Sie wählen zwischen:
+   - **Lokale HTTP API**: Für die Nutzung im lokalen Netzwerk
+   - **Cloud API**: Für die Nutzung über das Internet
+   
+   Sie können auch beide APIs aktivieren, das Tool wird dann automatisch zur Cloud API wechseln, falls die lokale API nicht erreichbar ist.
 
-Bei der ersten Ausführung werden Sie nach den grundlegenden Einstellungen gefragt, wie:
-- IP-Adresse der Wallbox (Base URL der API bspw. http://192.168.1.100)
-- Strompreis pro kWh
+4. Für die Cloud API:
+   - Erstellen Sie einen API-Schlüssel im selben Menü
+   - Notieren Sie sich die Seriennummer Ihres Geräts (zu finden unter: Einstellungen → Über → Hardwareinformationen)
+
+Bei der ersten Ausführung werden Sie nach den grundlegenden Einstellungen gefragt:
+- Für lokale API:
+  - IP-Adresse der Wallbox (Base URL der API, z.B. http://192.168.1.100)
+- Für Cloud API:
+  - Seriennummer des Geräts
+  - API-Schlüssel
+- Allgemein:
+  - Strompreis pro kWh
 
 Diese Einstellungen werden gespeichert und können später in den Programmeinstellungen angepasst werden.
 

@@ -2,3 +2,4 @@ goe_charger_settings.json
 *.spec
 dist/
 build/
+*.pdf
